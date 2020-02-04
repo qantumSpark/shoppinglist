@@ -12,14 +12,8 @@ mongoose.connect(process.env.DB_URI || 'mongodb://localhost/shoppinglist', {useN
 mongoose.connection.on('error' , err => console.log(err))
 mongoose.connection.once('open' , () => console.log("connected to mongoDB"))
 
-//
-app.get('/', (req,res) => {
-  res.send("It's working")
-})
-//
-
-//
+//Route
 app.use('/api/items', items)
 
 
-app.listen(process.env.PORT || 3000, ()=> console.log("Server starded"))
+app.listen(process.env.PORT || 5000, ()=> console.log("Server starded"))
